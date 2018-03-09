@@ -1,0 +1,25 @@
+<div class="tape">
+
+<p-tabView styleClass="redTop">
+
+    <!--strange composition below is required because ngprime need one tab to be [selected] to function correctly-->
+    <!--but setting [selected] to "false" for other tabs will lead to their initialisation, which disables ngprime lazy Load-->
+    <!--great design ngprime-->
+
+    <p-tabPanel *ngFor="let flow of tabData.flowList.slice(0,1)" [selected]="true" header={{formatName(flow.name,flow.numberOfNew)}}
+    [headerStyle]="{'color': 'green'}">
+        <ng-template pTemplate="content">
+            <tab-content [URL]="tabData.URL" [flowName]="flow.name"></tab-content>
+        </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel *ngFor="let flow of tabData.flowList.slice(1)" header={{formatName(flow.name,flow.numberOfNew)}}>
+        <ng-template pTemplate="content">
+            <tab-content [URL]="tabData.URL" [flowName]="flow.name"></tab-content>
+        </ng-template>
+    </p-tabPanel>
+
+</p-tabView>
+
+</div>
+

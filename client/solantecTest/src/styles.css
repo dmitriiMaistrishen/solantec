@@ -1,0 +1,15 @@
+.ui-tabview-nav{       
+  background-color:#c80038 !important;
+}
+
+.ui-tabview-title{
+	color:#7b0016 !important;
+}
+
+.tape{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #c80038;
+	border-radius: 5px;
+}
